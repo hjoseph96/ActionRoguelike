@@ -22,12 +22,14 @@ ASCharacter::ASCharacter()
 void ASCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ASCharacter::MoveForward(float value) 
 {
-	AddMovementInput(GetActorForwardVector(), value);
+	if (value > 0)
+	{
+		AddMovementInput(GetActorForwardVector(), value);
+	}
 }
 
 // Called every frame
